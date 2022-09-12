@@ -1,4 +1,3 @@
 
-  export const ArtDMarketplace = "0x8C3F3c6557b3023B7dc49C77029de31CBa833270"
-  export const ArtDodger = "0x115e624552aF7117E9EEebCd97C6dE9F25399F56"
-  
+export const ArtDMarketplace = "0x2A2a6C22BAAa9B5D43651A8ec1Ef4D8e37779436"
+export const ArtDodger = "0xA81623139e15B3dfB6f9a1f794F6Cc12dcbDA100"

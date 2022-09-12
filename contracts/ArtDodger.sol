@@ -13,14 +13,6 @@ contract ArtDodger is Ownable, ERC721Enumerable, ERC2981Royalties {
     string public baseURI = "https://gateway.pinata.cloud/ipfs/";
     mapping(uint256 => string) private _hashes;
 
-    function setBaseURI(string calldata _baseURI) external onlyOwner {
-        baseURI = _baseURI;
-    }
-
-    function uri(uint256 tokenId) public view returns (string memory) {
-        return string(abi.encodePacked(baseURI, _hashes[tokenId]));
-    }
-
     constructor() ERC721("Art Dodger", "ARTD") {}
 
     function mintNft(
@@ -63,10 +55,14 @@ contract ArtDodger is Ownable, ERC721Enumerable, ERC2981Royalties {
     function tokenURI(uint256 tokenId)
         public
         view
-        override(ERC721)
+        override
         returns (string memory)
     {
-        return super.tokenURI(tokenId);
+        return string(abi.encodePacked(baseURI, _hashes[tokenId]));
+    }
+
+    function setBaseURI(string calldata _baseURI) external onlyOwner {
+        baseURI = _baseURI;
     }
 
     function _burn(uint256 tokenId) internal override(ERC721) {
