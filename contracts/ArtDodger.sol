@@ -10,7 +10,7 @@ import "hardhat/console.sol";
 contract ArtDodger is Ownable, ERC721Enumerable, ERC2981Royalties {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
-    string public baseURI = "https://gateway.pinata.cloud/ipfs/";
+    string public baseURI = "https://ipfs.io/ipfs/";
     mapping(uint256 => string) private _hashes;
 
     constructor() ERC721("Art Dodger", "ARTD") {}
